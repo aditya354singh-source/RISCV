@@ -1,0 +1,19 @@
+module riscv_top(
+    input clk,
+    input reset
+);
+
+wire [31:0] a, b, result;
+wire [3:0] alu_control;
+wire zero;
+
+// Instantiate ALU
+alu alu_inst (
+    .a(a),
+    .b(b),
+    .alu_control(alu_control),
+    .result(result),
+    .zero(zero)
+);
+
+endmodule
